@@ -3,7 +3,7 @@ package com.app.swipeapplication.utils.cardstack
 import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
-
+import kotlin.math.sqrt
 
 /**
  * @author Shubham
@@ -11,12 +11,12 @@ import android.widget.RelativeLayout
  */
 
 object CardUtils {
-    const val DIRECTION_TOP_LEFT = 0
-    const val DIRECTION_TOP_RIGHT = 1
-    const val DIRECTION_BOTTOM_LEFT = 2
-    const val DIRECTION_BOTTOM_RIGHT = 3
+    private const val DIRECTION_TOP_LEFT = 0
+    private const val DIRECTION_TOP_RIGHT = 1
+    private const val DIRECTION_BOTTOM_LEFT = 2
+    private const val DIRECTION_BOTTOM_RIGHT = 3
     fun scale(v: View, pixel: Int, gravity: Int) {
-        val params = v.getLayoutParams() as RelativeLayout.LayoutParams
+        val params = v.layoutParams as RelativeLayout.LayoutParams
         params.leftMargin -= pixel * 3
         params.rightMargin -= pixel * 3
         if (gravity == CardAnimator.TOP) {
@@ -25,12 +25,12 @@ object CardUtils {
             params.topMargin -= pixel
         }
         params.bottomMargin -= pixel
-        v.setLayoutParams(params)
+        v.layoutParams = params
     }
 
     fun getMoveParams(v: View, upDown: Int, leftRight: Int): RelativeLayout.LayoutParams {
         val original =
-            v.getLayoutParams() as RelativeLayout.LayoutParams
+            v.layoutParams as RelativeLayout.LayoutParams
         //RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(original);
         val params = cloneParams(original)
         params.leftMargin += leftRight
@@ -42,10 +42,15 @@ object CardUtils {
 
     fun move(v: View, upDown: Int, leftRight: Int) {
         val params: RelativeLayout.LayoutParams = getMoveParams(v, upDown, leftRight)
-        v.setLayoutParams(params)
+        v.layoutParams = params
     }
 
-    fun scaleFrom(v: View, params: RelativeLayout.LayoutParams, pixel: Int, gravity: Int): RelativeLayout.LayoutParams {
+    fun scaleFrom(
+        v: View,
+        params: RelativeLayout.LayoutParams,
+        pixel: Int,
+        gravity: Int
+    ): RelativeLayout.LayoutParams {
         var params: RelativeLayout.LayoutParams = params
         Log.d("pixel", "onScroll: $pixel")
         params = cloneParams(params)
@@ -57,7 +62,7 @@ object CardUtils {
             params.topMargin -= pixel
         }
         params.bottomMargin -= pixel
-        v.setLayoutParams(params)
+        v.layoutParams = params
         return params
     }
 
@@ -79,7 +84,7 @@ object CardUtils {
             params.bottomMargin -= upDown
             params.topMargin += upDown
         }
-        v.setLayoutParams(params)
+        v.layoutParams = params
         return params
     }
 
@@ -106,7 +111,7 @@ object CardUtils {
         x2: Float,
         y2: Float
     ): Float {
-        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2).toDouble()).toFloat()
+        return sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2).toDouble()).toFloat()
     }
 
     fun direction(x1: Float, y1: Float, x2: Float, y2: Float): Int {

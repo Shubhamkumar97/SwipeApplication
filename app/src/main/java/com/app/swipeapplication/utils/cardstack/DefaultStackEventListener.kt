@@ -8,7 +8,7 @@ import com.app.swipeapplication.utils.cardstack.CardStack.CardEventListener
  * 21/1/20
  */
 class DefaultStackEventListener(i: Int) : CardEventListener {
-    private val mThreshold: Float
+    private val mThreshold: Float = i.toFloat()
     override fun swipeEnd(section: Int, distance: Float): Boolean {
         Log.d("rae", "swipeEnd:$section-$distance")
         return distance > mThreshold
@@ -36,7 +36,4 @@ class DefaultStackEventListener(i: Int) : CardEventListener {
         Log.d("rae", "topCardTapped")
     }
 
-    init {
-        mThreshold = i.toFloat()
-    }
 }

@@ -12,11 +12,11 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import kotlin.math.abs
 
-
 /**
- * @author Sumit Pratap Singh
- * 20/1/20
+ * @author Shubham
+ * 21/1/20
  */
+
 class CardStack : RelativeLayout {
 
     /**
@@ -30,7 +30,7 @@ class CardStack : RelativeLayout {
      *
      * Called after setting[.reset] To reinitialize the layout
      *
-     * @param enableRotation
+     * @param EnableRotation
      */
     var isEnableRotation: Boolean = false
     /**
