@@ -125,11 +125,7 @@ class CardStack : RelativeLayout {
 
 
     interface CardEventListener {
-        //section
-        // 0 | 1
-        //--------
-        // 2 | 3
-        // swipe distance, most likely be used with height and width of a view ;
+
 
         fun swipeEnd(section: Int, distance: Float): Boolean
 

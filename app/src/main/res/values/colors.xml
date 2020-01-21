@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#3C3F42</color>
+    <color name="colorPrimaryDark">#3C3F42</color>
+    <color name="colorAccent">#1A1414</color>
+
+    <color name="btn_gray">#3F4144</color>
+    <color name="btn_skyblue">#4169E1</color>
+    <color name="credentials">#4169A1</color>
+
+    <color name="txt_dark">#8E8B8C</color>
+    <color name="txt_light">#C0BEBE</color>
+    <color name="gray">#707070</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow">#2B2B2B</color>
+    <color name="orange">#FF5722</color>
+    <color name="olive">#3C3F41</color>
+    <color name="purple">#3C3F41</color>
+    <color name="light_view">#ECECEC</color>
+    <color name="maroon">#800000</color>
+    <color name="Dark_gray">#A9A9A9</color>
+
+    <color name="navy">#2B2B2B</color>
+    <color name="black">#000000</color>
+    <color name="black30">#4D000000</color>
+
+    <color name="brown_bg">#B33723</color>
+    <color name="grey">#B0B0B0</color>
+    <color name="dark_grey">#3B3B3F</color>
+    <color name="imageBorder">#FF000000</color>
+    <color name="user_profile_color">#ececec</color>
+
+
 </resources>

@@ -16,4 +16,6 @@ class CardsDataAdapter(context: Context?) :
         v.text = getItem(position)
         return contentView
     }
+
+
 }

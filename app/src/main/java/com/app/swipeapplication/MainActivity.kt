@@ -43,33 +43,39 @@ class MainActivity : Activity() {
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        // 重置
+
+        //Reset
         if (id == R.id.action_reset) {
             mCardStack!!.reset(true)
             return true
         }
-        // 底部
+
+        //bottom
         if (id == R.id.action_bottom) {
             mCardStack!!.stackGravity =
                 if (mCardStack!!.stackGravity == CardAnimator.TOP) CardAnimator.BOTTOM else CardAnimator.TOP
             mCardStack!!.reset(true)
             return true
         }
-        // 循环
+
+        //cycle
         if (id == R.id.action_loop) {
             mCardStack!!.isEnableLoop = !mCardStack!!.isEnableLoop
             mCardStack!!.reset(true)
         }
-        // 是否允许旋转
+
+        //Whether to allow rotation
         if (id == R.id.action_rotation) {
             mCardStack!!.isEnableRotation = !mCardStack!!.isEnableRotation
             mCardStack!!.reset(true)
         }
-        // 可见个数
+
+        //Visible number
         if (id == R.id.action_visibly_size) {
             mCardStack!!.visibleCardNum = mCardStack!!.visibleCardNum + 1
         }
-        // 间隔
+
+        //interval
         if (id == R.id.action_span) {
             mCardStack!!.stackMargin = mCardStack!!.stackMargin + 10
         }
